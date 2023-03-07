@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bagel</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+          integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+            integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+            crossorigin=""></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+        }
+
+        #map {
+            height: 100%;
+        }
+
+        #jumps {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 400;
+        }
+
+        #jumps button {
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<div id="jumps">
+    <button id="atmos" onclick="map.flyTo([3705, 3003], 0)">Атмос</button>
+    <button id="engi" onclick="map.flyTo([3175, 4362], 0)">Инженерный</button>
+    <button id="bridge" onclick="map.flyTo([2612, 4086], 0)">Мостик</button>
+    <button id="storage" onclick="map.flyTo([2388, 4215], 0)">Хранилище</button>
+    <button id="hop" onclick="map.flyTo([1666, 4265], 0)">Глава Персонала</button>
+    <button id="sec" onclick="map.flyTo([2124, 3215], 0)">Бриг</button>
+    <button id="rnd" onclick="map.flyTo([2775, 2702], 0)">РНД</button>
+    <button id="arriving" onclick="map.flyTo([460, 4087], 0)">Прибытие</button>
+    <button id="evac" onclick="map.flyTo([3372, 5650], 0)">Эвакуация</button>
+    <button id="cargo" onclick="map.flyTo([2869, 5517], 0)">Карго</button>
+    <button id="med" onclick="map.flyTo([1860, 5472], 0)">Мед</button>
+    <button id="bar" onclick="map.flyTo([1563, 4657], 0)">Бар/столовая</button>
+    <button id="botany" onclick="map.flyTo([1889.5, 2165.5], 1)">Ботаника в техах</button>
+    <button id="shittle" onclick="map.flyTo([1585, 2548], 0)">Заброшенный шлюз</button>
+    <button id="solar1" onclick="map.flyTo([664, 5072], 0)">Южные панели</button>
+    <button id="solar2" onclick="map.flyTo([1501, 6491], 0)">Восточные панели</button>
+    <button id="solar3" onclick="map.flyTo([4538, 3253], 0)">Северные панели</button>
+    <button id="solar4" onclick="map.flyTo([2005, 1778], 0)">Западные панели</button>
+    <button id="atmos2" onclick="map.flyTo([4053, 2164], 0)">Заброшенный атмос</button>
+    <button id="storage_eng" onclick="map.flyTo([3202, 4785], 0)">ПЛАТЫ</button>
+</div>
+<script>
+    const map = L.map('map', {
+        crs: L.CRS.Simple
+    });
+
+    const bounds = [[0, 0], [5312, 6848]];
+    L.imageOverlay('res/Bagelstation13.png', bounds).addTo(map);
+
+    map.fitBounds(bounds);
+    function onMapClick(e) {
+        console.log("You clicked the map at " + e.latlng);
+    }
+
+    map.on('click', onMapClick);
+</script>
+</body>
+</html>
