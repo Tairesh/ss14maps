@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aspid</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+          integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+            integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+            crossorigin=""></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="map"></div>
+<div id="jumps">
+    <button id="atmos" onclick="map.flyTo([1771, 1449], 0)">Атмос</button>
+    <button id="engi" onclick="map.flyTo([1814, 1945], 0)">Инженерный</button>
+    <button id="rnd" onclick="map.flyTo([2996, 1422], 0)">РНД</button>
+    <button id="med" onclick="map.flyTo([2962, 1919], 0)">Мед</button>
+    <button id="sec" onclick="map.flyTo([3902, 1597], 0)">Бриг</button>
+    <button id="bridge" onclick="map.flyTo([4663, 1715], 0)">Мостик</button>
+    <button id="cargo" onclick="map.flyTo([2479, 582], 0)">Карго</button>
+    <button id="bar" onclick="map.flyTo([2348, 1632], 0)">Бар/столовая</button>
+    <button id="clean" onclick="map.flyTo([1909, 976], 1)">Уборщик</button>
+    <button id="clean2" onclick="map.flyTo([2165, 2357], 1)">Уборщик 2</button>
+    <button id="arriving" onclick="map.flyTo([1971, 3248], 0)">Прибытие</button>
+    <button id="evac" onclick="map.flyTo([3537, 219], 0)">Эвакуация</button>
+    <button id="storage" onclick="map.flyTo([3811, 1863], 1)">Хранилище</button>
+    <button id="hop" onclick="map.flyTo([2475, 2576], 0)">Глава Персонала</button>
+    <button id="solar1" onclick="map.flyTo([4140, 493], 0)">СЗ панели</button>
+    <button id="solar2" onclick="map.flyTo([4139, 2934], 0)">СВ панели</button>
+    <button id="sindi" onclick="map.flyTo([1770, 510], 0)">Нычка антага</button>
+    <button id="shittle" onclick="map.flyTo([4054, 720], 0)">Заброшенный бар</button>
+    <button id="airlock" onclick="map.flyTo([2039, 181], 0)">Заброшенный шлюз</button>
+    <button id="storage_eng" onclick="map.flyTo([1557, 2281], 1)">ПЛАТЫ</button>
+    <button id="botany" onclick="map.flyTo([1811, 2882], 1)">Ботаника в техах</button>
+</div>
+<script src="js/map.js"></script>
+<script>
+    loadMap('res/AspidStation.png', [5120, 3424]);
+</script>
+</body>
+</html>
