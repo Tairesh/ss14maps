@@ -1,74 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Omega</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-        crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
-          integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
-          crossorigin=""></script>
-  <style>
-    html,
-    body {
-      margin: 0;
-      height: 100%;
-    }
-
-    #map {
-      height: 100%;
-    }
-
-    #jumps {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      width: 200px;
-      background-color: rgba(0, 0, 0, 0.2);
-      z-index: 400;
-    }
-
-    #jumps button {
-      font-size: large;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Omega</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+          integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+            integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+            crossorigin=""></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div id="map"></div>
 <div id="jumps">
-  <button id="atmos" onclick="map.flyTo([2792, 1825], 0)">Атмос</button>
-  <button id="engi" onclick="map.flyTo([2533, 2212], 0)">Инженерный</button>
-  <button id="bridge" onclick="map.flyTo([4058, 3807], 0)">Мостик</button>
-  <button id="storage" onclick="map.flyTo([3667, 3787], 0)">Хранилище</button>
-  <button id="hop" onclick="map.flyTo([3732, 4332], 0)">Глава Персонала</button>
-  <button id="sec" onclick="map.flyTo([3247, 2453], 0)">Бриг</button>
-  <button id="rnd" onclick="map.flyTo([1817, 4338], 0)">РНД</button>
-  <button id="arriving" onclick="map.flyTo([601, 3304], 0)">Прибытие</button>
-  <button id="evac" onclick="map.flyTo([2498, 5401], 0)">Эвакуация</button>
-  <button id="cargo" onclick="map.flyTo([3549, 4896], 0)">Карго</button>
-  <button id="med" onclick="map.flyTo([1783, 3221], 0)">Мед</button>
-  <button id="bar" onclick="map.flyTo([2627, 3787], 0)">Бар/столовая</button>
-  <button id="botanic" onclick="map.flyTo([1413, 1559], 0)">Ботаника в техах</button>
-  <button id="shittle" onclick="map.flyTo([1456, 2043], 0)">Заброшенный бар</button>
-  <button id="solar1" onclick="map.flyTo([1014, 5991], 0)">Восточные панели</button>
-  <button id="solar2" onclick="map.flyTo([1204, 494], 0)">Западные панели</button>
-  <button id="storage_eng" onclick="map.flyTo([2801, 5196], 0)">ПЛАТЫ</button>
+    <button id="atmos" onclick="map.flyTo([2792, 1825], 0)">Атмос</button>
+    <button id="engi" onclick="map.flyTo([2533, 2212], 0)">Инженерный</button>
+    <button id="bridge" onclick="map.flyTo([4058, 3807], 0)">Мостик</button>
+    <button id="storage" onclick="map.flyTo([3667, 3787], 0)">Хранилище</button>
+    <button id="hop" onclick="map.flyTo([3732, 4332], 0)">Глава Персонала</button>
+    <button id="sec" onclick="map.flyTo([3247, 2453], 0)">Бриг</button>
+    <button id="rnd" onclick="map.flyTo([1817, 4338], 0)">РНД</button>
+    <button id="arriving" onclick="map.flyTo([601, 3304], 0)">Прибытие</button>
+    <button id="evac" onclick="map.flyTo([2498, 5401], 0)">Эвакуация</button>
+    <button id="cargo" onclick="map.flyTo([3549, 4896], 0)">Карго</button>
+    <button id="med" onclick="map.flyTo([1783, 3221], 0)">Мед</button>
+    <button id="bar" onclick="map.flyTo([2627, 3787], 0)">Бар/столовая</button>
+    <button id="botanic" onclick="map.flyTo([1413, 1559], 0)">Ботаника в техах</button>
+    <button id="shittle" onclick="map.flyTo([1456, 2043], 0)">Заброшенный бар</button>
+    <button id="solar1" onclick="map.flyTo([1014, 5991], 0)">Восточные панели</button>
+    <button id="solar2" onclick="map.flyTo([1204, 494], 0)">Западные панели</button>
+    <button id="storage_eng" onclick="map.flyTo([2801, 5196], 0)">ПЛАТЫ</button>
 </div>
+<script src="js/map.js"></script>
 <script>
-  const map = L.map('map', {
-    crs: L.CRS.Simple
-  });
-
-  const bounds = [[0, 0], [3904, 4032]];
-  L.imageOverlay('res/Omega.png', bounds).addTo(map);
-
-  map.fitBounds(bounds);
-  function onMapClick(e) {
-    console.log("You clicked the map at " + e.latlng);
-  }
-
-  map.on('click', onMapClick);
+    loadMap('res/Omega.png', [3904, 4032]);
 </script>
 </body>
 </html>

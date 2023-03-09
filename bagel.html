@@ -9,30 +9,7 @@
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
             integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
             crossorigin=""></script>
-    <style>
-        html,
-        body {
-            margin: 0;
-            height: 100%;
-        }
-
-        #map {
-            height: 100%;
-        }
-
-        #jumps {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            width: 200px;
-            background-color: rgba(0, 0, 0, 0.2);
-            z-index: 400;
-        }
-
-        #jumps button {
-            font-size: large;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div id="map"></div>
@@ -59,20 +36,9 @@
     <button id="atmos2" onclick="map.flyTo([4053, 2164], 0)">Заброшенный атмос</button>
     <button id="bar2" onclick="map.flyTo([1396, 5747], 0)">Заброшенный бар</button>
 </div>
+<script src="js/map.js"></script>
 <script>
-    const map = L.map('map', {
-        crs: L.CRS.Simple
-    });
-
-    const bounds = [[0, 0], [5312, 6848]];
-    L.imageOverlay('res/Bagelstation13.png', bounds).addTo(map);
-
-    map.fitBounds(bounds);
-    function onMapClick(e) {
-        console.log("You clicked the map at " + e.latlng);
-    }
-
-    map.on('click', onMapClick);
+    loadMap('res/Bagelstation13.png', [5312, 6848]);
 </script>
 </body>
 </html>
