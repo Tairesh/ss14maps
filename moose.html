@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moose</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+          integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+            integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+            crossorigin=""></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="map"></div>
+<div id="jumps">
+    <p>Эта станция питается исключительно от панелей!</p>
+    <button id="bridge" onclick="map.flyTo([2991, 2771], 0)">Мостик</button>
+    <button id="hop" onclick="map.flyTo([2569, 2847], 0)">Глава Персонала</button>
+    <button id="atmos" onclick="map.flyTo([3045, 1907], 0)">Атмос</button>
+    <button id="engi" onclick="map.flyTo([2619, 1936], 0)">Инженерный</button>
+    <button id="med" onclick="map.flyTo([2169, 2196], 0)">Мед</button>
+    <button id="arriving" onclick="map.flyTo([2635, 4041], 0)">Прибытие</button>
+    <button id="evac" onclick="map.flyTo([2393, 971], 0)">Эвакуация</button>
+    <button id="rnd" onclick="map.flyTo([1237, 2617], 0)">РНД</button>
+    <button id="bar" onclick="map.flyTo([2085, 2900], 0)">Бар/столовая</button>
+    <button id="sec" onclick="map.flyTo([2590, 3381], 0)">Бриг</button>
+    <button id="cargo" onclick="map.flyTo([1617, 3218], 0)">Карго</button>
+    <button id="storage" onclick="map.flyTo([2869, 2257], 0)">Хранилище</button>
+    <button id="storage_eng" onclick="map.flyTo([2231, 1265], 0)">Компоненты</button>
+    <button id="bar2" onclick="map.flyTo([1140, 1529], 0)">Заброшенный бар</button>
+    <button id="aquarium" onclick="map.flyTo([1654, 2761], 0)">Аквариум</button>
+    <button id="trash" onclick="map.flyTo([1734, 1217], 0)">Мусорка</button>
+    <button id="solar1" onclick="map.flyTo([750, 2161], 0)">Южные панели</button>
+    <button id="solar2" onclick="map.flyTo([2098, 3763], 0)">Восточные панели</button>
+    <button id="solar3" onclick="map.flyTo([3242, 2262], 0)">Северные панели</button>
+    <button id="solar4" onclick="map.flyTo([2013, 843], 0)">Западные панели</button>
+</div>
+<script src="js/map.js"></script>
+<script>
+    loadMap('res/Moose.png', [4096, 4480]);
+</script>
+</body>
+</html>
