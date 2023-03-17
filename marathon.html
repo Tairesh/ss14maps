@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marathon</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+          integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+            integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+            crossorigin=""></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="map"></div>
+<div id="jumps">
+    <button id="bridge" onclick="map.flyTo([4668, 2651], 0)">Мостик</button>
+    <button id="hop" onclick="map.flyTo([4445, 3020], 0)">Глава Персонала</button>
+    <button id="atmos" onclick="map.flyTo([2530, 3306], 0)">Атмос</button>
+    <button id="engi" onclick="map.flyTo([2355, 2766], 0)">Инженерный</button>
+    <button id="cargo" onclick="map.flyTo([3344, 3560], 0)">Карго</button>
+    <button id="rnd" onclick="map.flyTo([3925, 3568], 0)">РНД</button>
+    <button id="med" onclick="map.flyTo([3266, 2580], 0)">Мед</button>
+    <button id="sec" onclick="map.flyTo([4754, 1807], 0)">Бриг</button>
+    <button id="bar" onclick="map.flyTo([3755, 2782], 0)">Бар/столовая</button>
+    <button id="arriving" onclick="map.flyTo([3528, 1288], 0)">Прибытие</button>
+    <button id="evac" onclick="map.flyTo([4013, 1244], 0)">Эвакуация</button>
+    <button id="church" onclick="map.flyTo([1699, 954], 0)">Мегацерковь</button>
+    <button id="solar1" onclick="map.flyTo([4407, 4694], 0)">Восточные панели</button>
+    <button id="solar2" onclick="map.flyTo([4820, 833], 0)">Западные панели</button>
+    <button id="storage" onclick="map.flyTo([4753, 3125], 0)">Хранилище</button>
+    <button id="storage_eng" onclick="map.flyTo([1904, 2172], 0)">Инж. хранилище</button>
+    <button id="storage_eng2" onclick="map.flyTo([4144, 3088], 0)">ПЛАТЫ</button>
+    <button id="shittle" onclick="map.flyTo([5318, 3421], 0)">Заброшенный бар</button>
+    <button id="dump" onclick="map.flyTo([4150, 4569], 0)">Свалка</button>
+    <button id="medved" onclick="map.flyTo([1431, 4212], 0)">Медвед</button>
+    <!-- TODO: серверная -->
+</div>
+<script src="js/map.js"></script>
+<script>
+    loadMap('res/Marathonstation.png', [6368, 5440]);
+</script>
+</body>
+</html>
