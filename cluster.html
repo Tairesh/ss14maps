@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cluster</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+          integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+            integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+            crossorigin=""></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="map"></div>
+<div id="jumps">
+    <button id="bridge" onclick="map.flyTo([2915, 1510], 0)">Мостик</button>
+    <button id="hop" onclick="map.flyTo([2706, 1495], 0)">Глава Персонала</button>
+    <button id="storage" onclick="map.flyTo([2848, 1401], 0)">Хранилище</button>
+    <button id="atmos" onclick="map.flyTo([1695, 2526], 0)">Атмос</button>
+    <button id="engi" onclick="map.flyTo([1859, 2067], 0)">Инженерный</button>
+    <button id="sec" onclick="map.flyTo([2492, 2010], 0)">Бриг</button>
+    <button id="rnd" onclick="map.flyTo([1864, 1053], 0)">РНД</button>
+    <button id="cargo" onclick="map.flyTo([1307, 1912], 0)">Карго</button>
+    <button id="med" onclick="map.flyTo([2385, 1176], 0)">Мед</button>
+    <button id="bar" onclick="map.flyTo([2223, 1575], 0)">Бар/столовая</button>
+    <button id="evac" onclick="map.flyTo([2350, 198], 0)">Эвакуация</button>
+    <button id="arriving" onclick="map.flyTo([1051, 1551], 0)">Прибытие</button>
+    <button id="shittle" onclick="map.flyTo([1579, 499], 0)">Заброшенный бар</button>
+    <button id="solar1" onclick="map.flyTo([3029, 629], 0)">Северные панели</button>
+    <button id="solar2" onclick="map.flyTo([1317, 477], 0)">Южные панели</button>
+    <button id="storage_eng" onclick="map.flyTo([1002, 1422], 0)">ПЛАТЫ</button>
+    <button id="eva" onclick="map.flyTo([2773, 2816], 0)">ЕВА</button>
+</div>
+<script src="js/map.js"></script>
+<script>
+    loadMap('res/Cluster_Station.png', [4288, 3104]);
+</script>
+</body>
+</html>

@@ -10,7 +10,7 @@ function loadMap(file, size) {
 
     map.fitBounds(bounds);
     function onMapClick(e) {
-        console.log("You clicked the map at " + e.latlng);
+        console.log(Math.round(e.latlng.lat) + ', ' + Math.round(e.latlng.lng));
     }
 
     map.on('click', onMapClick);
